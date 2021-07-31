@@ -1,9 +1,9 @@
 let scoreValue = document.querySelector(".score");
-scoreValue.textContent = 0;
+scoreValue.textContent = 10;
 let highScoreValue = document.querySelector(".highScore");
 highScoreValue.textContent = 0;
-const secretNumber = Math.floor(Math.random() * 5)
-console.log(secretNumber);
+let secretNumber = Math.floor(Math.random() * 5)
+
 
 document.querySelector('.play').addEventListener('click', function reset() {
 
@@ -31,18 +31,30 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
    let inputValue = Number(document.querySelector('input').value);
    console.log(inputValue)
 
-   if (secretNumber === inputValue) {
-      scoreValue.textContent++
-      clue.innerText = "your a winner boo"
+if (scoreValue.textContent == 1){
+   document.location.reload()
+}else
+   {if (secretNumber === inputValue) {
+   scoreValue.textContent++
+   clue.innerText = "your a winner boo"
+   secretNumber = Math.floor(Math.random() * 5)
+   console.log(secretNumber)
 
-   } else if (secretNumber < inputValue) {
-      clue.innerText = "your close but your cup is overflowed"
-      scoreValue.textContent--
+} else if (secretNumber < inputValue) {
+   clue.innerText = "your close but your cup is overflowed"
+   scoreValue.textContent--
 
-   } else {
-      scoreValue.textContent--
-      clue.innerText = "fill her up"
-   }
+} else {
+   scoreValue.textContent--
+   clue.innerText = "fill her up"
+}
+
+}
+
+
+
+
+  
 
 
    // grab the value the person as put in and match it to the secret number .
@@ -54,6 +66,10 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
    child.innerText = inputValue;
 
 })
-
+console.log(secretNumber);
 
    //  history
+
+
+   // on the question mark do display the secert number when when the input number is the same as the secert number , 
+   // "if the input is not the same then should go back to its default number "
