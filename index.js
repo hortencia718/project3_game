@@ -26,18 +26,22 @@ document.querySelector(".highScore").textContent = highScore;
 // lets start guessing func here 
 
 document.querySelector('.check').addEventListener('click',function checkNumber(){
+   
  let clue = document.getElementById('clue') 
  let inputValue = document.querySelector('input').value  
  
  if(secretNumber == inputValue){
-     console.log("true")
+    document.querySelector(".score").textContent = score++;
+    
     clue.innerText = "your a winner boo"
 
  } else if(secretNumber < inputValue ){
-     
-    console.log('false')
+
+     clue.innerText = "your close but your cup is overflowed"
+  
  } else {
-    console.log("losers !!!")
+   
+    clue.innerText ="fill her up"
  }
 
  
