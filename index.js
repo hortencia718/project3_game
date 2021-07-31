@@ -1,5 +1,4 @@
 
-
 document.querySelector('.play').addEventListener('click',function reset(){
 
 // first change the reset bg color onclick ,
@@ -24,11 +23,26 @@ document.querySelector(".highScore").textContent = highScore;
 
 
 // check function 
+// lets start guessing func here 
 
 document.querySelector('.check').addEventListener('click',function checkNumber(){
- let inputValue = document.querySelector('input').value    
+ let clue = document.getElementById('clue') 
+ let inputValue = document.querySelector('input').value  
+ 
+ if(secretNumber == inputValue){
+     console.log("true")
+    clue.innerText = "your a winner boo"
+
+ } else if(secretNumber < inputValue ){
+     
+    console.log('false')
+ } else {
+    console.log("losers !!!")
+ }
+
+ 
 // grab the value the person as put in and match it to the secret number .
     
-
-    console.log(inputValue)
+// compare the value to the sercet number
+    // console.log(inputValue)
     })
