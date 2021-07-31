@@ -9,7 +9,7 @@ document.querySelector('.play').addEventListener('click',function reset(){
 console.log('play')
 })
     
-// guessing the number here function is where we hold the number 
+// guessing the secret number here function is where we hold the number 
 
 const secretNumber = Math.floor(Math.random()* 5)
 console.log(secretNumber);
@@ -23,7 +23,8 @@ document.querySelector(".highScore").textContent = highScore;
 
 
 // check function 
-// lets start guessing func here 
+// guessing func here 
+// change inner-text, set clues to different scores
 
 document.querySelector('.check').addEventListener('click',function checkNumber(){
    
@@ -33,7 +34,7 @@ document.querySelector('.check').addEventListener('click',function checkNumber()
  if(secretNumber == inputValue){
     document.querySelector(".score").textContent = score++;
     
-    clue.innerText = "your a winner boo"
+    clue.innerText = "your a winner Boo"
 
  } else if(secretNumber < inputValue ){
 

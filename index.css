@@ -3,3 +3,18 @@ body {
     padding:0;
     background-color: rgb(148, 167, 179);
 }
+
+.play{
+    padding: 10px;
+    width:6%;
+    
+}
+
+input{
+    padding:10px;
+}
+
+.check{
+    padding:10px;
+   
+}
