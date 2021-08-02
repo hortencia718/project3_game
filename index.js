@@ -2,7 +2,8 @@ let scoreValue = document.querySelector(".score");
 scoreValue.textContent = 0;
 let highScoreValue = document.querySelector(".highScore");
 highScoreValue.textContent = 0;
-const secretNumber = Math.floor(Math.random() * 5)
+let secretNumber = Math.floor(Math.random() * 5);
+let newSecretNumber =() => { return Math.floor(Math.random() * 5)};
 console.log(secretNumber);
 
 document.querySelector('.play').addEventListener('click', function reset() {
@@ -27,12 +28,16 @@ document.querySelector('.play').addEventListener('click', function reset() {
 document.querySelector('.check').addEventListener('click', function checkNumber() {
 
    let clue = document.getElementById('clue')
-   let inputValue = Number(document.querySelector('input').value);
+   let inputValue = document.querySelector('input').value;
    console.log(inputValue)
+      
 
-   if (secretNumber === inputValue) {
-      scoreValue.textContent++
-      clue.innerText = "your a winner boo"
+   if (secretNumber == inputValue) {
+      scoreValue.textContent++;
+      clue.innerText = "your a winner boo";
+      secretNumber = newSecretNumber();
+      console.log( "new secret number = ", secretNumber );
+      
 
    } else if (secretNumber < inputValue) {
       clue.innerText = "your close but your cup is overflowed"
@@ -42,7 +47,7 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
       scoreValue.textContent--
       clue.innerText = "fill her up"
    }
-
+   
 
    // grab the value the person as put in and match it to the secret number .
 
@@ -55,4 +60,4 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
 })
 
 
-   //  history
+   //  history 
