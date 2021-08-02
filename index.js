@@ -31,30 +31,25 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
    let inputValue = Number(document.querySelector('input').value);
    console.log(inputValue)
 
-if (scoreValue.textContent == 1){
-   document.location.reload()
-}else
-   {if (secretNumber === inputValue) {
-   scoreValue.textContent++
-   clue.innerText = "your a winner boo"
-   secretNumber = Math.floor(Math.random() * 5)
-   console.log(secretNumber)
+   if (scoreValue.textContent == 1) {
+      document.location.reload()
+   } else {
+      if (secretNumber === inputValue) {
+         scoreValue.textContent++
+         clue.innerText = "your a winner boo"
+         secretNumber = Math.floor(Math.random() * 5)
+         console.log(secretNumber)
 
-} else if (secretNumber < inputValue) {
-   clue.innerText = "your close but your cup is overflowed"
-   scoreValue.textContent--
+      } else if (secretNumber < inputValue) {
+         clue.innerText = "your close but your cup is overflowed"
+         scoreValue.textContent--
 
-} else {
-   scoreValue.textContent--
-   clue.innerText = "fill her up"
-}
+      } else {
+         scoreValue.textContent--
+         clue.innerText = "fill her up"
+      }
 
-}
-
-
-
-
-  
+   }
 
 
    // grab the value the person as put in and match it to the secret number .
@@ -67,8 +62,6 @@ if (scoreValue.textContent == 1){
 
 })
 console.log(secretNumber);
-
-   //  history
 
 
    // on the question mark do display the secert number when when the input number is the same as the secert number , 
