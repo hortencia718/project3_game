@@ -1,10 +1,12 @@
 let scoreValue = document.querySelector(".score");
-scoreValue.textContent = 10;
+let score = 10;
+scoreValue.textContent = score;
 let highScoreValue = document.querySelector(".highScore");
-highScoreValue.textContent = 0;
+let highScore = 0
+highScoreValue.textContent = highScore;
 let secretNumber = Math.floor(Math.random() * 5);
-let newSecretNumber =() => { return Math.floor(Math.random() * 5)};
-console.log(secretNumber);
+let newSecretNumber = () => { return Math.floor(Math.random() * 5) };
+console.log("secret number", secretNumber);
 
 document.querySelector('.play').addEventListener('click', function reset() {
 
@@ -29,31 +31,44 @@ document.querySelector('.play').addEventListener('click', function reset() {
 document.querySelector('.check').addEventListener('click', function checkNumber() {
 
    let clue = document.getElementById('clue')
-   let inputValue = document.querySelector('input').value;
-   console.log(inputValue)
-      
+   let inputValue = Number(document.querySelector('input').value);
 
-   if (scoreValue.textContent == 1) {
+   console.log("input Value",  inputValue)
+
+
+   if (score == 1) {
       document.location.reload()
    } else {
+
       if (secretNumber === inputValue) {
-         scoreValue.textContent++
+         score++
          clue.innerText = "your a winner boo"
          secretNumber = newSecretNumber();
-         console.log( "new secret number = ", secretNumber );
+         console.log("new secret nuber", secretNumber)
+         scoreValue.textContent = score;
+         if (score > highScore) {
+            highScore = score;
+            highScoreValue.textContent = highScore; 
+         }
+         console.log("new secret number = ", secretNumber);
 
       } else if (secretNumber < inputValue) {
          clue.innerText = "your close but your cup is overflowed"
-         scoreValue.textContent--
+         score--
+         scoreValue.textContent = score;
 
       } else {
-         scoreValue.textContent--
+         score--
+         scoreValue.textContent = score;
          clue.innerText = "fill her up"
       }
 
    }
-   
+   console.log("score", score)
 
+ const changeBackground = () => {
+    document.styleSheets.changeBackground("red")
+ }
    // grab the value the person as put in and match it to the secret number .
 
    // compare the value to the sercet number
@@ -63,7 +78,3 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
    child.innerText = inputValue;
 
 })
-console.log(secretNumber);
-
-
-   //  history 
