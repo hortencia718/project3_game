@@ -11,10 +11,11 @@ body {
 }
 
 input{
-    padding:12px;
+    padding:30px;
     border-color: magenta;
     outline: none;
     border-radius: 4px;
+    margin-left:220px;
 }
 
 .check{
@@ -56,6 +57,7 @@ h1.rainbow-text{
       font-size: 60px;
       color:rgb(55, 48, 152);
       font-weight: 600;
+      margin-left: 220px;
   }
 
   p#clue{
