@@ -10,15 +10,26 @@ console.log("secret number", secretNumber);
 
 document.querySelector('.play').addEventListener('click', function reset() {
 
-   // first change the reset bg color onclick ,
+   //  guessing history lets start guessing ....
+   scoreValue.textContent = 10;
+   changeBackground("#94A7B3");
+   document.querySelector(".reveal").innerText = "?";
+   // removeIt();
+   let historyQ = document.getElementById("history-container");
+   historyQ.removeChild(historyQ.childNodes[2]);
+   document.getElementById("clue").innerText = "lets start guessing ...."
 
-   //  then reset the score 
-
-   document.location.reload()
+   // document.location.reload()
    // reset guessing history
    console.log('play');
 })
-
+const removeIt = () => {
+   // let historyQ = document.getElementById("history-container");
+   // historyQ.removeChild(historyQ.childNodes[2]);
+   // const list = document.createElement("ul")
+   // list.id = "history";
+   // document.getElementById("history-container").appendChild(list)
+}
 // guessing the number here function is where we hold the number 
 
 
@@ -33,7 +44,7 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
    let clue = document.getElementById('clue')
    let inputValue = Number(document.querySelector('input').value);
 
-   console.log("input Value",  inputValue)
+   console.log("input Value", inputValue)
 
 
    if (score == 1) {
@@ -42,13 +53,15 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
 
       if (secretNumber === inputValue) {
          score++
-         clue.innerText = "your a winner boo"
+         clue.innerText = "your a winner boo";
+         document.querySelector(".reveal").innerText = secretNumber;
          secretNumber = newSecretNumber();
          console.log("new secret nuber", secretNumber)
          scoreValue.textContent = score;
+         changeBackground("#ff0095");
          if (score > highScore) {
             highScore = score;
-            highScoreValue.textContent = highScore; 
+            highScoreValue.textContent = highScore;
          }
          console.log("new secret number = ", secretNumber);
 
@@ -56,19 +69,17 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
          clue.innerText = "your close but your cup is overflowed"
          score--
          scoreValue.textContent = score;
-
+         changeBackground("red");
       } else {
          score--
          scoreValue.textContent = score;
-         clue.innerText = "fill her up"
+         clue.innerText = "fill her up";
+         changeBackground("green");
       }
-
    }
    console.log("score", score)
 
- const changeBackground = () => {
-    document.styleSheets.changeBackground("red")
- }
+   
    // grab the value the person as put in and match it to the secret number .
 
    // compare the value to the sercet number
@@ -78,3 +89,7 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
    child.innerText = inputValue;
 
 })
+
+const changeBackground = (color) => {
+   document.body.style.backgroundColor = color;
+}
