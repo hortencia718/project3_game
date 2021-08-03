@@ -11,10 +11,82 @@ body {
 }
 
 input{
-    padding:10px;
+    padding:12px;
+    border-color: magenta;
+    outline: none;
+    border-radius: 4px;
 }
 
 .check{
     padding:10px;
    
 }
+
+h1.rainbow-text{
+    font-size: 82px; 
+    text-align: center;
+    background-image: linear-gradient(to right, red, green, pink, hotpink,orange, yellow, purple, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: move 600s linear infinite;
+    font-family: 'Londrina Outline', cursive; 
+}
+@keyframes move{
+    to{
+        background-position: 2400vh;
+    }
+}
+
+
+
+  /* button */
+  button.play{
+  border: 4px solid rgb(255, 251, 0);
+  color:hsl(20, 66%, 29%);
+  font-size: 18px;
+  text-align: center;
+  padding:25px;
+  margin:0px;
+  margin-left: 50%;
+  margin-top:20px;
+
+  }
+
+  .reveal{
+      font-size: 60px;
+      color:rgb(55, 48, 152);
+      font-weight: 600;
+  }
+
+  p#clue{
+      font-size: 36px;
+      color:rgb(245, 233, 233);
+      margin-left: 220px;
+  }
+
+  p.text{
+      font-size: 36px;
+      color:rgb(241, 226, 226);
+      margin-left: 220px;
+  }
+
+  p.score{
+      font-size: 36px;
+      color:rgb(14, 155, 148);
+      margin-left:220px;
+  }
+
+  p.highScore{
+      font-size: 36px;
+      color:lightseagreen;
+      margin-left: 220px;
+  }
+
+  
+
+  button.check{
+      padding: 12px;
+      border: 4px solid rgb(48, 224, 255);
+  }
+
+ 
