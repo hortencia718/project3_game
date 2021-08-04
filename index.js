@@ -56,7 +56,7 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
          clue.innerText = "your a winner boo";
          document.querySelector(".reveal").innerText = secretNumber;
          secretNumber = newSecretNumber();
-         console.log("new secret nuber", secretNumber)
+         console.log("new secret number", secretNumber)
          scoreValue.textContent = score;
          changeBackground("#ff0095");
          if (score > highScore) {
@@ -77,7 +77,7 @@ document.querySelector('.check').addEventListener('click', function checkNumber(
          changeBackground("green");
       }
    }
-   console.log("score", score)
+   console.log("score", score);
 
    
    // grab the value the person as put in and match it to the secret number .
